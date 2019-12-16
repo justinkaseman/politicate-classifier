@@ -31,7 +31,7 @@ from nltk import word_tokenize
 STOPWORDS = set(stopwords.words('english'))
 
 
-master_df = pd.read_csv('data/2019_12_15_first_data.csv')
+master_df = pd.read_csv('2019_12_15_first_data.csv')
 
 REPLACE_BY_SPACE_RE = re.compile('[/(){}\[\]\|@,;]')
 BAD_SYMBOLS_RE = re.compile('[^0-9a-z #+_]')
@@ -131,8 +131,8 @@ plt.show();
 
 # serialize model to JSON
 model_json = model.to_json()
-with open("data/model.json", "w") as json_file:
+with open("model.json", "w") as json_file:
     json_file.write(model_json)
 # serialize weights to HDF5
-model.save_weights("data/model.h5")
+model.save_weights("model.h5")
 print("Saved model to disk")
