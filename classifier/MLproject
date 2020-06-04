@@ -1,0 +1,24 @@
+name: multistep_example
+
+conda_env: conda.yaml
+
+entry_points:
+
+  main:
+    parameters:
+      als_max_iter: {type: int, default: 10}
+      keras_hidden_units: {type: int, default: 20}
+      max_row_limit: {type: int, default: 100000}
+    command: "python main.py --als-max-iter {als_max_iter} --keras-hidden-units {keras_hidden_units}
+                             --max-row-limit {max_row_limit}"
+
+  clean_data:
+    parameters:
+      csv: path
+    command: "python 1_clean_data.py --csv-path {csv}"
+
+
+  build_train_model:
+    parameters:
+      csv: path
+    command: "python 2_build_train_model.py --csv-path {csv}"

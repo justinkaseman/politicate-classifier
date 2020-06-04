@@ -1,0 +1,23 @@
+name: politicate
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pip
+  - pyspark
+  - requests
+  - click
+  - matplotlib
+  - keras
+  - scikit-learn
+  - tensorflow
+  - pandas
+  - numpy
+  - nltk
+  - click
+  - spacy
+  - gensim
+  - mlflow
+  - pip:
+      - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.0/en_core_web_sm-2.2.0.tar.gz#egg=en_core_web_sm
